@@ -1,11 +1,11 @@
-import initialContacts from './contacts.json'
+import initialContacts from './contacts.json';
 import { useState } from 'react';
 import './App.css';
 import ContactList from './components/ContactList/ContactList';
 
-// const [contacts, setContacts] = useState(initialContacts);
-
 const App = () => {
+  const [contacts, setContacts] = useState(initialContacts);
+
   return (
     <div>
       <h1>Phonebook</h1>
@@ -13,7 +13,7 @@ const App = () => {
       <SearchBox />
       <ContactList /> */}
 
-      <ContactList contacts={initialContacts} />
+      <ContactList contacts={contacts} />
     </div>
   );
 };
