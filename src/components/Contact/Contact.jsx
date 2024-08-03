@@ -2,7 +2,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { AiFillPhone } from 'react-icons/ai';
 import css from './Contact.module.css'
 
-const Contact = ({ name, phone }) => {
+const Contact = ({ contactId, name, phone, onDeleteContact }) => {
   return (
     <>
       <div className="profile">
@@ -10,12 +10,15 @@ const Contact = ({ name, phone }) => {
           <FaUserCircle />
           {name}
         </p>
-        <a href={`tel:${phone.split('-').join('')}`} className={css.phone}>
+        <a href={`tel:${phone}`} className={css.phone}>
           <AiFillPhone />
           {phone}
         </a>
       </div>
-      <button className={css.button}>Delete</button>
+      
+      <button onClick={() => onDeleteContact(contactId)} className={css.button}>
+        Delete
+      </button>
     </>
   );
 };
