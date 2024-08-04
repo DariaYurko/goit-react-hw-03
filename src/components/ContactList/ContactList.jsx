@@ -2,7 +2,6 @@ import Contact from '../Contact/Contact';
 import css from './ContactsList.module.css';
 
 const ContsctList = ({ contacts, onDeleteContact }) => {
-
   return (
     <ul className={css.contactList}>
       {contacts.map(contact => {

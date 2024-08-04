@@ -5,7 +5,7 @@ import css from './Contact.module.css'
 const Contact = ({ contactId, name, phone, onDeleteContact }) => {
   return (
     <>
-      <div className="profile">
+      <div className={css.profile}>
         <p className={css.name}>
           <FaUserCircle />
           {name}
