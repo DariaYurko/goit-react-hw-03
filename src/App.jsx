@@ -1,5 +1,5 @@
 import initialContacts from './contacts.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import ContactList from './components/ContactList/ContactList';
 import ContactForm from './components/ContactForm/ContactForm';
@@ -9,8 +9,15 @@ import { nanoid } from 'nanoid';
 
 
 const App = () => {
-  const [contacts, setContacts] = useState(initialContacts);
+  // const [contacts, setContacts] = useState(initialContacts);
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(localStorage.getItem('contacts')) ?? initialContacts;
+  });
   // console.log(contacts);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const onAddContact = contact => {
     const finalContact = {
