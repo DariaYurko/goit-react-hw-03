@@ -7,6 +7,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 
 import { nanoid } from 'nanoid';
 
+
 const App = () => {
   const [contacts, setContacts] = useState(initialContacts);
   // console.log(contacts);
@@ -28,8 +29,8 @@ const App = () => {
   const [filtredContactValue, setFiltredContactValue] = useState('');
   // console.log(filtredContactValue);
 
-  const onInputChange = e => {
-    const value = e.target.value;
+  const onInputChange = event => {
+    const value = event.target.value;
     setFiltredContactValue(value);
     // console.log(value);
   };
@@ -43,7 +44,9 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
+
       <ContactForm onAddContact={onAddContact} />
+      {/* <ContactForm /> */}
 
       <SearchBox
         filtredContactValue={filtredContactValue}

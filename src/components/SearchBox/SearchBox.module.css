@@ -3,6 +3,7 @@
 }
 
 .filterFieldInput {
+   height: 20px;
    padding: 8px 10px;
    border: 1px solid grey;
    border-radius: 5px;
@@ -12,6 +13,6 @@
 
 .filterFieldInput:hover,
 .filterFieldInput:focus {
-   box-shadow: 0 0 3px rgb(94, 184, 154);
+   box-shadow: 0px 0px 1px 1px rgb(94, 184, 154);
    outline: transparent;
 }
